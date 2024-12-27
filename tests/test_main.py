@@ -20,3 +20,8 @@ def test_list_products():
     response = client.get("/produtos")
 
     assert response.status_code == 200
+
+def test_list_find_products():
+    response = client.get("/produtos/1")
+
+    assert response.status_code == 200
