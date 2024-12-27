@@ -21,6 +21,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
 run = "uvicorn main:app --reload"
+run_in_prod = "uvicorn main:app --host 0.0.0.0 --port 8000"
 test = "pytest -v"
 kill = "kill -9 $(lsof -t -i:8000)"
 freeze_req = "pip freeze >> requirements.txt"
