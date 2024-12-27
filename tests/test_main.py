@@ -14,3 +14,9 @@ def test_home_message():
     response = client.get("/")
 
     assert response.json() == {"message":"Tudo certo"}
+
+
+def test_list_products():
+    response = client.get("/produtos")
+
+    assert response.status_code == 200
