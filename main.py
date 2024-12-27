@@ -36,3 +36,11 @@ def home():
 @app.get("/produtos")
 def list_products():
     return dict_produtos
+
+@app.get("/produtos/{id}")
+def find_product(id:int):
+    for produto in dict_produtos:
+        if produto.get('id', None) == id:
+            return produto
+        
+    return {"status":404, "message": "produto não encontrado"}
